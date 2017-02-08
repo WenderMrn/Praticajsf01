@@ -7,10 +7,11 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core">
 	
 	<h:messages errorStyle="color:red"/>
-	
 	<h:form>
-		<h:inputText id="login" value="#{loginBean.login}"></h:inputText>
-		<h:inputSecret  id="senha" value="#{loginBean.senha}"></h:inputSecret>
+		<h:inputText name="login" id="login" value="#{loginBean.login}" required="true">
+			<f:validateLength minimum="5" maximum="10" />
+		</h:inputText>
+		<h:inputSecret name="senha" id="senha" value="#{loginBean.senha}" required="true"></h:inputSecret>
 		<h:commandButton value="Logar" action="#{loginBean.autentique}"></h:commandButton>
 	</h:form>
 </html>
